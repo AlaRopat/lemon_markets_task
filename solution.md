@@ -117,18 +117,14 @@ I added automated tests for:
 
 ## Improvements for the future
 
-1. **Use `SELECT ... FOR UPDATE SKIP LOCKED`** in Postgres for stronger multi-worker concurrency control.
-2. **Add Alembic migrations** instead of `create_all()`.
-3. **Expose `GET /orders/{id}`** so clients can observe placement progress.
-4. **Introduce exponential backoff** for retries.
-5. **Dead-letter handling** for events that exceed max retries.
-6. **Idempotency key support** on `POST /orders`.
-7. **Observability**: structured logs, metrics, tracing, alerts.
-8. **Message broker** replacement for polling, e.g. Kafka/SQS/RabbitMQ.
-9. **Stronger ISIN validation** using checksum rules.
-10. **Separate process for the worker** instead of in-process thread inside the API container.
-11. **Testcontainers for Postgres** in CI to avoid SQLite-specific differences.
-12. **Exactly-once safeguards** if the exchange interface supports idempotent external identifiers.
+1. **Expose `GET /orders/{id}`** so clients can observe placement progress.
+2. **Introduce exponential backoff** for retries.
+3. **Dead-letter handling** for events that exceed max retries.
+4. **Idempotency key support** on `POST /orders`.
+5. **Observability**: structured logs, metrics, tracing, alerts.
+6. **Message broker** replacement for polling, e.g. Kafka/SQS/RabbitMQ.
+7. **Separate process for the worker** instead of in-process thread inside the API container.
+8. **Testcontainers for Postgres** in CI to avoid SQLite-specific differences.
 
 ## Why this solution fits the requirements
 

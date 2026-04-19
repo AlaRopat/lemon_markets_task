@@ -32,22 +32,3 @@ curl -X POST http://127.0.0.1:8000/orders \
     "limit_price": 110.50
   }'
 ```
-## Testing strategy
-
-I would test the application at three levels:
-
-1. Unit tests
-    - request validation
-    - service logic
-    - worker retry behavior
-
-2. Integration tests
-    - order and outbox persistence in PostgreSQL
-    - transaction boundaries
-    - status updates after processing
-
-3. End-to-end tests
-    - run API + PostgreSQL + worker
-    - create order through HTTP
-    - verify order persisted
-    - verify outbox event processed eventually

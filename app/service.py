@@ -24,8 +24,6 @@ class OrderService:
         self.db.add(outbox_event)
         self.db.commit()
         self.db.refresh(order)
-        rows = self.db.execute(text("SELECT * FROM order_placement_outbox")).fetchall()
-        print(f"ROWS FROM APP DB: {rows}")
         return order
 
 
